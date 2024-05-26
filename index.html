@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+     <title>DnDice</title>
+     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+     <meta charset='utf-8'>
+     <link href='./css/dndice.css' type='text/css' rel='stylesheet'>
+</head>
+
+<body>
+     <main id='main-container'>
+          <h1>DnDice<sup>&reg;</sup></h1>
+
+          <section id='dice-container'>
+               <!-- d100 -->
+               <button type='button' class='die button' data-type='100'>100</button>
+               <!-- d20 -->
+               <button type='button' class='die button' data-type='20'>20</button>
+               <!-- d12 -->
+               <button type='button' class='die button' data-type='12'>12</button>
+               <!-- d10 -->
+               <button type='button' class='die button' data-type='10'>10</button>
+               <!-- d8 -->
+               <button type='button' class='die button' data-type='8'>8</button>
+               <!-- d6 -->
+               <button type='button' class='die button' data-type='6'>6</button>
+               <!-- d4 -->
+               <button type='button' class='die button' data-type='4'>4</button>
+          </section>
+
+          <section id='selected-dice-container'>
+               <div id='selected-dice'></div>
+               <div id='selected-dice-breakdown'></div>
+          </section>
+
+          <section id='results-container' class='hidden'>
+               <div id='results'></div>
+               <details id='results-breakdown'>
+                    <summary>Results Breakdown</summary>
+                    <div></div>
+               </details>
+          </section>
+
+          <h2>Questions</h2>
+          <section id='explanation'>
+               <details>
+                    <summary>Why is this here?</summary>
+                    <p>
+                         This is just a DnD dice roller I made because I wanted to do like the rest of one of my DnD
+                         groups
+                         and make something related to DnD. I'm not much of an artisan, so I figured I'd write some
+                         code.
+                    </p>
+               </details>
+          </section>
+     </main>
+</body>
+
+<script type='text/javascript' src='./js/dndice.js'></script>
+
+</html>
