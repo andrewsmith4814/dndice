@@ -13,6 +13,7 @@
      <main id='main-container'>
           <h1>DnDice<sup>&reg;</sup></h1>
 
+          <!-- The actual dice you can select -->
           <section id='dice-container'>
                <!-- d100 -->
                <button type='button' class='die button' data-type='100'>100</button>
@@ -30,11 +31,16 @@
                <button type='button' class='die button' data-type='4'>4</button>
           </section>
 
+          <!-- The Dice you have selected -->
           <section id='selected-dice-container'>
                <div id='selected-dice'></div>
                <div id='selected-dice-breakdown'></div>
+               <div>
+                    <button id='roll-button' type='button' class='button' disabled='disabled'>Roll</button>
+               </div>
           </section>
 
+          <!-- The results of your roll -->
           <section id='results-container' class='hidden'>
                <div id='results'></div>
                <details id='results-breakdown'>

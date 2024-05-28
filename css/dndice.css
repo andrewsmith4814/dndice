@@ -18,7 +18,7 @@ details>summary {
 }
 
 .hidden {
-     display: none;
+     display: none !important;
 }
 
 /***********/
@@ -42,6 +42,11 @@ details>summary {
      background-color: #e6e6e6;
 }
 
+.button[disabled] {
+     opacity: 0.8;
+     cursor: default;
+}
+
 /**************/
 /* Containers */
 /**************/
@@ -54,18 +59,13 @@ details>summary {
 }
 
 #main-container>section {
-     border: 1px solid black;
-     /* todo: Remove because this is here while I test things */
      display: flex;
      width: 50vw;
      padding: 1rem;
      height: fit-content;
 }
 
-#explanation {
-     border: none !important;
-}
-
+/* The container of selectable dice */
 #dice-container {
      flex-wrap: wrap;
      row-gap: 1rem;
@@ -74,16 +74,41 @@ details>summary {
      justify-content: center;
 }
 
+/* The container for the containers that tell you what you've selected, how that's broken down, and the roll button */
+#selected-dice-container {
+     flex-direction: column;
+     flex-wrap: nowrap;
+}
+
+#selected-dice-container>div {
+     width: 100%;
+}
+
+/* Container for what dice you have ready to be rolled */
 #selected-dice {
      padding: 1rem;
      border-radius: 4px;
      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-     width: 100%;
      border: 1px solid #8c8c8c;
      display: flex;
      flex-wrap: wrap;
      gap: 0.5rem;
+}
+
+/* The giant button to actually do the rolling */
+#roll-button {
+     width: 100%;
+     font-size: 2rem;
+     background-color: #bb0000;
+     color: white;
+     border: 2px solid white;
+     outline: 1px solid black;
+     margin-top: 1rem;
+}
+
+#roll-button:hover {
+     background-color: #dd0000;
 }
 
 /****************/
@@ -92,24 +117,39 @@ details>summary {
 button.die.button {
      width: 3rem;
      height: 2rem;
-     font-weight: bod;
      font-size: 1.1rem;
+     text-align: center;
+     user-select: none;
 }
 
-/* Styles to make them look like their type of dice */
-button.die.button[data-type="100"] {}
+/* Styles to make them look like their type of dice, and order them in the list */
+button.die.button[data-type="100"] {
+     order: 1;
+}
 
-button.die.button[data-type="20"] {}
+button.die.button[data-type="20"] {
+     order: 2;
+}
 
-button.die.button[data-type="12"] {}
+button.die.button[data-type="12"] {
+     order: 3;
+}
 
-button.die.button[data-type="10"] {}
+button.die.button[data-type="10"] {
+     order: 4;
+}
 
-button.die.button[data-type="8"] {}
+button.die.button[data-type="8"] {
+     order: 5;
+}
 
-button.die.button[data-type="6"] {}
+button.die.button[data-type="6"] {
+     order: 6;
+}
 
-button.die.button[data-type="4"] {}
+button.die.button[data-type="4"] {
+     order: 7;
+}
 
 /*****************/
 /* Media Queries */
