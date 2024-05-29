@@ -24,7 +24,7 @@ const addButtonToSelected = function (button_elem) {
     // Take the button and append it to the end of selected_dice
     SELECTED_DICE_ELEMENT.appendChild(button_elem);
 
-    // Gather which dice have been selected, and put them into a list to show the breakdown
+    // Gather which dice have been selected, and put them into a list to show the breakdown. Clear out the old list
     if (SELECTED_DICE_BREAKDOWN.querySelector('div')) {
         SELECTED_DICE_BREAKDOWN.querySelector('div').remove();
     }
@@ -42,6 +42,8 @@ const addButtonToSelected = function (button_elem) {
         let breakdown_list_container = document.createElement('div');
         for (let die in breakdown) {
             let breakdown_node = document.createElement('div');
+            breakdown_node.innerText = ("d" + die) + ' ' + breakdown[die];
+            breakdown_list_container.appendChild(breakdown_node);
         }
         SELECTED_DICE_BREAKDOWN.appendChild(breakdown_list_container);
     }

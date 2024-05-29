@@ -87,13 +87,27 @@ details>summary {
 /* Container for what dice you have ready to be rolled */
 #selected-dice {
      padding: 1rem;
-     border-radius: 4px;
+     border-radius: 0.3rem;
      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
      border: 1px solid #8c8c8c;
      display: flex;
      flex-wrap: wrap;
      gap: 0.5rem;
+}
+
+/* Customizes the container that shows the total count of each die type */
+#selected-dice-breakdown>div {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     border-bottom-left-radius: 0.3rem;
+     border-bottom-right-radius: 0.3rem;
+     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+     border: 1px solid #8c8c8c;
+     border-top: none;
+     padding: 1rem;
 }
 
 /* The giant button to actually do the rolling */
