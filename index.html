@@ -11,57 +11,144 @@
 
 <body>
      <main id='main-container'>
-          <h1>DnDice<sup>&reg;</sup></h1>
+          <h1>DnDice</h1>
 
           <!-- The actual dice you can select -->
           <section id='dice-container'>
                <!-- d100 -->
-               <button type='button' class='die button' data-type='100'>100</button>
+               <button type='button' class='die button' data-type='100'>d100</button>
                <!-- d20 -->
-               <button type='button' class='die button' data-type='20'>20</button>
+               <button type='button' class='die button' data-type='20'>d20</button>
                <!-- d12 -->
-               <button type='button' class='die button' data-type='12'>12</button>
+               <button type='button' class='die button' data-type='12'>d12</button>
                <!-- d10 -->
-               <button type='button' class='die button' data-type='10'>10</button>
+               <button type='button' class='die button' data-type='10'>d10</button>
                <!-- d8 -->
-               <button type='button' class='die button' data-type='8'>8</button>
+               <button type='button' class='die button' data-type='8'>d8</button>
                <!-- d6 -->
-               <button type='button' class='die button' data-type='6'>6</button>
+               <button type='button' class='die button' data-type='6'>d6</button>
                <!-- d4 -->
-               <button type='button' class='die button' data-type='4'>4</button>
+               <button type='button' class='die button' data-type='4'>d4</button>
           </section>
 
           <!-- The Dice you have selected -->
+          <h2>Selected Dice</h2>
           <section id='selected-dice-container'>
                <div id='selected-dice'></div>
                <div id='selected-dice-breakdown'></div>
-               <div>
+               <div class='centered'>
                     <button id='roll-button' type='button' class='button' disabled='disabled'>Roll</button>
                </div>
           </section>
 
           <!-- The results of your roll -->
+          <h2 class='hidden' id='roll-results-header'>Roll Results</h2>
           <section id='results-container' class='hidden'>
-               <div id='results'></div>
-               <details id='results-breakdown'>
-                    <summary>Results Breakdown</summary>
-                    <div></div>
-               </details>
+               <div id='results' class='centered'></div>
+               <div id='results-breakdown'></div>
+               <div class='centered'>
+                    <br />
+                    <button id='clear-all' type='button' class='button'>Clear</button>
+               </div>
           </section>
-
-          <h2 style='margin-top:calc(50vh);'>Questions</h2>
+     </main>
+     <footer id='footer'>
+          <hr />
+          <h2 class='centered'>Questions</h2>
           <section id='explanation'>
                <details>
                     <summary>Why is this here?</summary>
                     <p>
-                         This is just a DnD dice roller I made because I wanted to do like the rest of one of my DnD
-                         groups
-                         and make something related to DnD. I'm not much of an artisan, so I figured I'd write some
-                         code.
+                         This is just a DnD dice roller I made because I wanted to do like the rest of one of
+                         my DnD groups and make something related to DnD. I'm not much of an artisan, so I
+                         figured I'd write some code.
+                    </p>
+               </details>
+               <br />
+               <details>
+                    <summary>How do I use this site?</summary>
+                    <p>
+                         If you're reading this because you actually need help, then I failed because it was
+                         supposed to be fairly intuitive.
+                         <br />
+                         <br />
+                         You select dice by clicking/tapping them at the top of the page. The selected dice show up in a
+                         box below. You click roll when you've selected what dice you want to roll and at what quantity.
+                         <br />
+                         If you want to remove a die from your selected list, you just click/tap it, and it will be
+                         removed.
+                    </p>
+               </details>
+               <br />
+               <details>
+                    <summary>About Me (as a developer)</summary>
+                    <p>
+                         I'm a software developer who has been in the game for about 10 years as of summer 2024.
+                         <br />
+                         I like minimalistic approaches to code, in that I like to use fewer libraries and frameworks in
+                         situations where I don't they are called for. I have nothing against various libraries (except
+                         for react.js, I greatly dislike react.js),
+                         I just tend to not a see a need for them in my day to day work, especially for trivial
+                         applications like this one. If you stumbled upon this, I hope you found some use out of it, or
+                         at least didn't feel as though you wasted your time.
+                    </p>
+               </details>
+               <br />
+               <details>
+                    <summary>About Me (as a person)</summary>
+                    <p>
+                         Aside from software development, I'm a fairly plain guy who serves the Lord Jesus
+                         Christ wherever I can.
+                         <br />
+                         I can play a couple of instruments and am in both of my Church's worship bands. (this is
+                         starting to sound like a bio from the early 2000's internet).
+                    </p>
+               </details>
+               <br />
+               <details>
+                    <summary>The Gospel</summary>
+                    <p>
+                         This is the gospel (good news of Jesus Christ) told through what is commonly called the
+                         "Roman Road", which is a collection of verses from the book of Romans.
+                         <br />
+                         <br />
+                         <strong>Romans 3:23 &mdash;</strong>
+                         "&hellip;for all have sinned and fall short of the glory of God&hellip;"
+                         <br />
+                         <br />
+                         <strong>Romans 5:8 &mdash;</strong>
+                         "But God demonstrates His own love toward us, in that while we were still sinners, Christ died
+                         for us."
+                         <br />
+                         <br />
+                         <strong>Romans 6:23 &mdash;</strong>
+                         "For the wages of sin is death, but the gracious gift of God is eternal life in Christ Jesus
+                         our Lord."
+                         <br />
+                         <br />
+                         <strong>Romans 8:1 &mdash;</strong>
+                         "Therefore, there is now no condemnation for those who are in Christ…"
+                         <br />
+                         <br />
+                         <strong>Romans 10:9-10 &mdash;</strong>
+                         "If you confess with your mouth, 'Jesus is Lord,' and believe in your heart that God raised him
+                         from the dead, you will be saved. One believes with the heart, resulting in righteousness, and
+                         one confesses with the mouth, resulting in salvation."
+                         <br />
+                         <br />
+                         <br />
+                         <strong>Credits:</strong>
+                         <br />
+                         Scripture quotations marked CSB have been taken from the Christian Standard Bible&reg;,
+                         Copyright
+                         &copy;
+                         2017 by Holman Bible Publishers. Used by permission. Christian Standard Bible&reg; and CSB&reg;
+                         are
+                         federally registered trademarks of Holman Bible Publishers.
                     </p>
                </details>
           </section>
-     </main>
+     </footer>
 </body>
 
 <script type='text/javascript' src='./js/dndice.js'></script>

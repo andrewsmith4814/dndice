@@ -10,6 +10,7 @@
 /* Prevents that little 5px margin that's defaulted on the body for some reason */
 body {
      margin: 0;
+     font-family: 'Times New Roman', serif;
 }
 
 details>summary {
@@ -19,6 +20,10 @@ details>summary {
 
 .hidden {
      display: none !important;
+}
+
+.centered {
+     text-align: center;
 }
 
 /***********/
@@ -51,18 +56,31 @@ details>summary {
 /* Containers */
 /**************/
 #main-container {
-     height: 100vh;
      display: flex;
      align-items: center;
-     padding: 1rem;
      flex-direction: column;
+     min-height: calc(100vh - 50px);
 }
 
-#main-container>section {
+#footer {
+     min-height: 50px;
+}
+
+#main-container>section,
+#footer>section {
      display: flex;
-     width: 50vw;
      padding: 1rem;
      height: fit-content;
+     width: 50vw;
+}
+
+#footer>section {
+     margin: 0 auto;
+}
+
+#main-container>h1,
+#main-container>h2 {
+     margin-bottom: 0;
 }
 
 /* The container of selectable dice */
@@ -80,10 +98,6 @@ details>summary {
      flex-wrap: nowrap;
 }
 
-#selected-dice-container>div {
-     width: 100%;
-}
-
 /* Container for what dice you have ready to be rolled */
 #selected-dice {
      padding: 1rem;
@@ -94,9 +108,16 @@ details>summary {
      display: flex;
      flex-wrap: wrap;
      gap: 0.5rem;
+     justify-content: center;
 }
 
 /* Customizes the container that shows the total count of each die type */
+#selected-dice-container>#selected-dice-breakdown {
+     width: 95%;
+     margin: 0 auto;
+     font-size: 1.1rem;
+}
+
 #selected-dice-breakdown>div {
      display: flex;
      flex-direction: row;
@@ -108,11 +129,13 @@ details>summary {
      border: 1px solid #8c8c8c;
      border-top: none;
      padding: 1rem;
+     column-gap: 1rem;
+     row-gap: 0.5rem;
+     justify-content: center;
 }
 
 /* The giant button to actually do the rolling */
 #roll-button {
-     width: 100%;
      font-size: 2rem;
      background-color: #bb0000;
      color: white;
@@ -125,6 +148,25 @@ details>summary {
      background-color: #dd0000;
 }
 
+/* The container that shows the results of your roll */
+#results-container {
+     flex-direction: column;
+}
+
+#results {
+     font-size: 1.5rem;
+}
+
+#clear-all {
+     color: white;
+     background-color: #008CBA;
+     font-size: 2rem;
+}
+
+#clear-all:hover {
+     background-color: #00ace6;
+}
+
 /****************/
 /* Dice Buttons */
 /****************/
@@ -134,19 +176,20 @@ button.die.button {
      font-size: 1.1rem;
      text-align: center;
      user-select: none;
+     color: black;
 }
 
 /* Styles to make them look like their type of dice, and order them in the list */
 button.die.button[data-type="100"] {
-     order: 1;
+     order: 7;
 }
 
 button.die.button[data-type="20"] {
-     order: 2;
+     order: 6;
 }
 
 button.die.button[data-type="12"] {
-     order: 3;
+     order: 5;
 }
 
 button.die.button[data-type="10"] {
@@ -154,28 +197,37 @@ button.die.button[data-type="10"] {
 }
 
 button.die.button[data-type="8"] {
-     order: 5;
+     order: 3;
 }
 
 button.die.button[data-type="6"] {
-     order: 6;
+     order: 2;
 }
 
 button.die.button[data-type="4"] {
-     order: 7;
+     order: 1;
+}
+
+/* Explanation Section */
+#explanation {
+     flex-direction: column;
 }
 
 /*****************/
 /* Media Queries */
 /*****************/
 @media only screen and (max-width:767px) and (min-width: 320px) {
-     #main-container>section {
+
+     #main-container>section,
+     #footer>section {
           width: 95vw;
      }
 }
 
 @media only screen and (max-width:991px) and (min-width: 768px) {
-     #main-container>section {
+
+     #main-container>section,
+     #footer>section {
           width: 75vw;
      }
 }
